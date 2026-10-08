@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class AnguloFueraDeRangoError(ValueError):
     """El ángulo no está entre 0 y 360 grados (#7)."""
 
@@ -43,3 +46,11 @@ class AlturaOlasFueraDeRangoError(ValueError):
             f"La altura de las olas debe estar entre 0 y 30 metros, no {metros}"
         )
         self.metros = metros
+
+
+class MomentoNoEnPuntoError(ValueError):
+    """El momento no corresponde a una hora en punto (#14)."""
+
+    def __init__(self, fecha_hora: datetime) -> None:
+        super().__init__(f"El momento debe ser una hora en punto, no {fecha_hora}")
+        self.fecha_hora = fecha_hora
