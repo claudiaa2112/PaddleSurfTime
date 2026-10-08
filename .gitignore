@@ -1,17 +1,22 @@
-   # Ficheros del sistema
-   .DS_Store
-   Thumbs.db
+# Ficheros del sistema
+.DS_Store
+Thumbs.db
 
-   # Configuración de editores
-   .vscode/
-   .idea/
+# Configuración de editores
+.vscode/
+.idea/
 
-   # Dependencias
-   node_modules/
-   venv/
-   __pycache__/
+# Dependencias
+node_modules/
+venv/
+.venv/
+__pycache__/
 
-   # Compilación / build
-   dist/
-   build/
-   *.log
+# Caché de herramientas de comprobación
+.mypy_cache/
+.ruff_cache/
+
+# Compilación / build
+dist/
+build/
+*.log
