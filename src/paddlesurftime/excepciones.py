@@ -33,3 +33,13 @@ class FuerzaVientoFueraDeRangoError(ValueError):
             f"no {kilometros_por_hora}"
         )
         self.kilometros_por_hora = kilometros_por_hora
+
+
+class AlturaOlasFueraDeRangoError(ValueError):
+    """La altura de las olas no está entre 0 y 30 metros (#10)."""
+
+    def __init__(self, metros: float) -> None:
+        super().__init__(
+            f"La altura de las olas debe estar entre 0 y 30 metros, no {metros}"
+        )
+        self.metros = metros
