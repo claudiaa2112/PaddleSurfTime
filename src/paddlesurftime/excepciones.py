@@ -54,3 +54,17 @@ class MomentoNoEnPuntoError(ValueError):
     def __init__(self, fecha_hora: datetime) -> None:
         super().__init__(f"El momento debe ser una hora en punto, no {fecha_hora}")
         self.fecha_hora = fecha_hora
+
+
+class NombrePlayaVacioError(ValueError):
+    """El nombre de la playa está vacío (#17)."""
+
+    def __init__(self) -> None:
+        super().__init__("El nombre de la playa no puede estar vacío")
+
+
+class MunicipioVacioError(ValueError):
+    """El municipio de la playa está vacío (#17)."""
+
+    def __init__(self) -> None:
+        super().__init__("El municipio de la playa no puede estar vacío")
