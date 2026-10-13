@@ -19,7 +19,6 @@ El proyecto está en fase de planificación, están definidos los usuarios, hist
 
 ## Documentación adicional
 
-- [Análisis del dominio](docs/analisis_dominio.md)
 - [Lenguaje de programación](docs/lenguaje.md)
 - [Fuentes de datos y heurística](docs/datos.md)
 - [Juego de rol](docs/juego_de_rol.md)
