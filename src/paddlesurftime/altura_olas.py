@@ -7,8 +7,6 @@ ALTURA_OLAS_MAXIMA_METROS = 30
 
 @dataclass(frozen=True)
 class AlturaOlas:
-    """Altura de las olas en metros (#10)."""
-
     metros: float
 
     def __post_init__(self) -> None:

@@ -7,8 +7,6 @@ FUERZA_VIENTO_MAXIMA_KMH = 500
 
 @dataclass(frozen=True)
 class FuerzaViento:
-    """Fuerza del viento en kilómetros por hora (#9)."""
-
     kilometros_por_hora: float
 
     def __post_init__(self) -> None:

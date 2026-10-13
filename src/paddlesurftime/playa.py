@@ -6,8 +6,6 @@ from paddlesurftime.ubicacion import Ubicacion
 
 
 class Playa:
-    """Playa identificada por su nombre y su municipio (#17)."""
-
     def __init__(
         self,
         nombre: str,

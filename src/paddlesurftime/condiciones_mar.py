@@ -8,8 +8,6 @@ from paddlesurftime.viento import Viento
 
 @dataclass(frozen=True)
 class CondicionesMar:
-    """Viento, olas y bandera de una playa en un momento concreto (#16)."""
-
     momento: Momento
     viento: Viento
     altura_olas: AlturaOlas

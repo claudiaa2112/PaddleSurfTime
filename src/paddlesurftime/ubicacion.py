@@ -11,8 +11,6 @@ LONGITUD_MAXIMA = 180
 
 @dataclass(frozen=True)
 class Ubicacion:
-    """Posición de una playa dada por su latitud y su longitud en grados (#8)."""
-
     latitud: float
     longitud: float
 
