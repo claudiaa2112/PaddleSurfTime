@@ -21,7 +21,7 @@ class Playa:
         self._municipio = municipio
         self._ubicacion = ubicacion
         self._orientacion = orientacion
-        self._condiciones: list[CondicionesMar] = []
+        self._condiciones: dict[Momento, CondicionesMar] = {}
 
     def __eq__(self, otra: object) -> bool:
         if not isinstance(otra, Playa):
@@ -29,14 +29,7 @@ class Playa:
         return self._nombre == otra._nombre and self._municipio == otra._municipio
 
     def guardar_condiciones(self, condiciones: CondicionesMar) -> None:
-        for i, guardadas in enumerate(self._condiciones):
-            if guardadas.momento == condiciones.momento:
-                self._condiciones[i] = condiciones
-                return
-        self._condiciones.append(condiciones)
+        self._condiciones[condiciones.momento] = condiciones
 
     def condiciones_en(self, momento: Momento) -> CondicionesMar | None:
-        for condiciones in self._condiciones:
-            if condiciones.momento == momento:
-                return condiciones
-        return None
+        return self._condiciones.get(momento)
