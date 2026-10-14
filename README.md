@@ -24,20 +24,5 @@ El proyecto está en fase de planificación, están definidos los usuarios, hist
 - [Juego de rol](docs/juego_de_rol.md)
 - [Configuración del entorno](docs/entorno.md)
 
-## Comprobación del código
-
-- Python 3.14, la versión fijada en `.python-version`.
-- Herramientas: ruff 0.16.10 (estilo, PEP 8) y mypy 2.4.0 (tipos).
-- Desde la carpeta del proyecto:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install ruff==0.16.10 mypy==2.4.0
-ruff check --select E,F,I,N,UP,B src
-ruff format --check src
-mypy --strict src/paddlesurftime
-```
-
 
 
