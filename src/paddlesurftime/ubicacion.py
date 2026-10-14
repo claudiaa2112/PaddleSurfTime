@@ -9,7 +9,7 @@ LATITUD_MAXIMA = 90
 LONGITUD_MAXIMA = 180
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, kw_only=True)
 class Ubicacion:
     latitud: float
     longitud: float
