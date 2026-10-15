@@ -8,6 +8,6 @@ Se ha elegido Python 3.14, acordado con @manupa16 en el issue #6. Estas son las 
 - **Composición:** un objeto puede contener otros sin heredar de ellos. Por ejemplo, `DireccionViento` contiene un `Angulo`.
 - **Excepciones:** Python tiene una jerarquía de excepciones estándar. Las del dominio heredan de `ValueError`, que es la que indica que un valor no es correcto.
 - **Conjuntos cerrados de valores:** `Enum` permite representar la bandera con solo sus tres colores.
-- **Versión fijada:** la versión se indica en `.python-version` y se instala con un gestor de versiones (mise) sin permisos de administrador.
+- **Versión:** Python 3.14, que se instala en el espacio de usuario con un gestor de versiones (pyenv).
 - **Estilo:** ruff comprueba que el código sigue PEP 8, la guía de estilo de Python.
 - **Lo conocemos los dos:** tanto el propietario como quien ha desarrollado este milestone pueden trabajar con él.
