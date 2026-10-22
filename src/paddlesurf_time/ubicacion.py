@@ -1,12 +1,25 @@
 from dataclasses import dataclass
 
-from paddlesurf_time.excepciones import (
-    LatitudFueraDeRangoError,
-    LongitudFueraDeRangoError,
-)
-
 LATITUD_MAXIMA = 90
 LONGITUD_MAXIMA = 180
+
+
+class LatitudFueraDeRangoError(ValueError):
+    def __init__(self, latitud: float) -> None:
+        super().__init__(
+            f"La latitud debe estar entre {-LATITUD_MAXIMA} y {LATITUD_MAXIMA} "
+            f"grados, no {latitud}"
+        )
+        self.latitud = latitud
+
+
+class LongitudFueraDeRangoError(ValueError):
+    def __init__(self, longitud: float) -> None:
+        super().__init__(
+            f"La longitud debe estar entre {-LONGITUD_MAXIMA} y {LONGITUD_MAXIMA} "
+            f"grados, no {longitud}"
+        )
+        self.longitud = longitud
 
 
 @dataclass(frozen=True, kw_only=True)

@@ -7,20 +7,6 @@ class AnguloFueraDeRangoError(ValueError):
         self.grados = grados
 
 
-class LatitudFueraDeRangoError(ValueError):
-    def __init__(self, latitud: float) -> None:
-        super().__init__(f"La latitud debe estar entre -90 y 90 grados, no {latitud}")
-        self.latitud = latitud
-
-
-class LongitudFueraDeRangoError(ValueError):
-    def __init__(self, longitud: float) -> None:
-        super().__init__(
-            f"La longitud debe estar entre -180 y 180 grados, no {longitud}"
-        )
-        self.longitud = longitud
-
-
 class FuerzaVientoFueraDeRangoError(ValueError):
     def __init__(self, kilometros_por_hora: float) -> None:
         super().__init__(
