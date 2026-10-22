@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from paddlesurftime.excepciones import AnguloFueraDeRangoError
+from paddlesurf_time.excepciones import AnguloFueraDeRangoError
 
 GRADOS_VUELTA_COMPLETA = 360
 

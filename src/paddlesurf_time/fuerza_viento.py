@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from paddlesurftime.excepciones import FuerzaVientoFueraDeRangoError
+from paddlesurf_time.excepciones import FuerzaVientoFueraDeRangoError
 
 FUERZA_VIENTO_MAXIMA_KMH = 500
 

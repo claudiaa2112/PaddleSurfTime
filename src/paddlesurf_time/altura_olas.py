@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from paddlesurftime.excepciones import AlturaOlasFueraDeRangoError
+from paddlesurf_time.excepciones import AlturaOlasFueraDeRangoError
 
 ALTURA_OLAS_MAXIMA_METROS = 30
 

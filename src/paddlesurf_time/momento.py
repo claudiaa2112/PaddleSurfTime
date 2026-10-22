@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from paddlesurftime.excepciones import MomentoNoEnPuntoError
+from paddlesurf_time.excepciones import MomentoNoEnPuntoError
 
 
 @dataclass(frozen=True)

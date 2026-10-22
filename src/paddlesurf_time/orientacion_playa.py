@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-from paddlesurftime.angulo import Angulo
+from paddlesurf_time.angulo import Angulo
 
 
 @dataclass(frozen=True)
-class DireccionViento:
+class OrientacionPlaya:
     angulo: Angulo

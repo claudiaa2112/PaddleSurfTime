@@ -1,8 +1,8 @@
-from paddlesurftime.condiciones_mar import CondicionesMar
-from paddlesurftime.excepciones import MunicipioVacioError, NombrePlayaVacioError
-from paddlesurftime.momento import Momento
-from paddlesurftime.orientacion_playa import OrientacionPlaya
-from paddlesurftime.ubicacion import Ubicacion
+from paddlesurf_time.condiciones_mar import CondicionesMar
+from paddlesurf_time.excepciones import MunicipioVacioError, NombrePlayaVacioError
+from paddlesurf_time.momento import Momento
+from paddlesurf_time.orientacion_playa import OrientacionPlaya
+from paddlesurf_time.ubicacion import Ubicacion
 
 
 class Playa:
