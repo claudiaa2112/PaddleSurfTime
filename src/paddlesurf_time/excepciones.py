@@ -7,15 +7,6 @@ class AnguloFueraDeRangoError(ValueError):
         self.grados = grados
 
 
-class FuerzaVientoFueraDeRangoError(ValueError):
-    def __init__(self, kilometros_por_hora: float) -> None:
-        super().__init__(
-            "La fuerza del viento debe estar entre 0 y 500 km/h, "
-            f"no {kilometros_por_hora}"
-        )
-        self.kilometros_por_hora = kilometros_por_hora
-
-
 class AlturaOlasFueraDeRangoError(ValueError):
     def __init__(self, metros: float) -> None:
         super().__init__(
