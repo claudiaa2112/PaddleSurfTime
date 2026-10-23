@@ -4,7 +4,7 @@ from datetime import datetime
 from paddlesurf_time.bandera import Bandera
 from paddlesurf_time.viento import Viento
 
-ALTURA_OLAS_MAXIMA_METROS = 30
+ALTURA_OLAS_MAXIMA_METROS = 10
 
 
 class AlturaOlasFueraDeRangoError(ValueError):
