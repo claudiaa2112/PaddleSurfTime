@@ -37,7 +37,7 @@ class LongitudFueraDeRangoError(ValueError):
 
 
 class OrientacionFueraDeRangoError(ValueError):
-    def __init__(self, orientacion_grados: float) -> None:
+    def __init__(self, orientacion_grados: int) -> None:
         super().__init__(
             "La orientación de la playa debe estar entre 0 y "
             f"{GRADOS_VUELTA_COMPLETA} grados, no {orientacion_grados}"
@@ -51,7 +51,7 @@ class Playa:
     municipio: str
     latitud: float
     longitud: float
-    orientacion_grados: float
+    orientacion_grados: int
     condiciones: dict[datetime, CondicionesMar] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
