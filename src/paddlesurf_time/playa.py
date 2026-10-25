@@ -1,3 +1,4 @@
+from dataclasses import dataclass, field
 from datetime import datetime
 
 from paddlesurf_time.condiciones_mar import CondicionesMar
@@ -24,22 +25,18 @@ class OrientacionFueraDeRangoError(ValueError):
         self.orientacion_grados = orientacion_grados
 
 
+@dataclass(kw_only=True, eq=False)
 class Playa:
-    def __init__(
-        self,
-        nombre: str,
-        municipio: str,
-        ubicacion: Ubicacion,
-        orientacion_grados: float,
-    ) -> None:
-        if nombre.strip() == "":
+    nombre: str
+    municipio: str
+    ubicacion: Ubicacion
+    orientacion_grados: float
+    condiciones: dict[datetime, CondicionesMar] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        if self.nombre.strip() == "":
             raise NombrePlayaVacioError()
-        if municipio.strip() == "":
+        if self.municipio.strip() == "":
             raise MunicipioVacioError()
-        if not (0 <= orientacion_grados <= GRADOS_VUELTA_COMPLETA):
-            raise OrientacionFueraDeRangoError(orientacion_grados)
-        self._nombre = nombre
-        self._municipio = municipio
-        self._ubicacion = ubicacion
-        self._orientacion_grados = orientacion_grados
-        self._condiciones: dict[datetime, CondicionesMar] = {}
+        if not (0 <= self.orientacion_grados <= GRADOS_VUELTA_COMPLETA):
+            raise OrientacionFueraDeRangoError(self.orientacion_grados)
