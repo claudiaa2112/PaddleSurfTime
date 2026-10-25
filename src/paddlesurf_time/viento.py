@@ -14,7 +14,7 @@ class FuerzaVientoFueraDeRangoError(ValueError):
 
 
 class DireccionVientoFueraDeRangoError(ValueError):
-    def __init__(self, direccion_grados: float) -> None:
+    def __init__(self, direccion_grados: int) -> None:
         super().__init__(
             f"La dirección del viento debe estar entre 0 y {GRADOS_VUELTA_COMPLETA} "
             f"grados, no {direccion_grados}"
@@ -25,7 +25,7 @@ class DireccionVientoFueraDeRangoError(ValueError):
 @dataclass(frozen=True, kw_only=True)
 class Viento:
     fuerza_kmh: float
-    direccion_grados: float
+    direccion_grados: int
 
     def __post_init__(self) -> None:
         if not (0 <= self.fuerza_kmh <= FUERZA_VIENTO_MAXIMA_KMH):
