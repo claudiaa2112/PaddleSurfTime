@@ -1,8 +1,7 @@
 from dataclasses import dataclass
 
-from paddlesurf_time.angulo import GRADOS_VUELTA_COMPLETA
-
 FUERZA_VIENTO_MAXIMA_KMH = 500
+GRADOS_VUELTA_COMPLETA = 360
 
 
 class FuerzaVientoFueraDeRangoError(ValueError):

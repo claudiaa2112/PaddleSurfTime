@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from paddlesurf_time.angulo import GRADOS_VUELTA_COMPLETA
 from paddlesurf_time.condiciones_mar import CondicionesMar
 from paddlesurf_time.ubicacion import Ubicacion
+from paddlesurf_time.viento import GRADOS_VUELTA_COMPLETA
 
 
 class NombrePlayaVacioError(ValueError):
