@@ -1,4 +1,3 @@
-from dataclasses import dataclass, field
 from datetime import datetime
 
 from paddlesurf_time.condiciones_mar import CondicionesMar
@@ -45,23 +44,29 @@ class OrientacionFueraDeRangoError(ValueError):
         self.orientacion_grados = orientacion_grados
 
 
-@dataclass(kw_only=True, eq=False)
 class Playa:
-    nombre: str
-    municipio: str
-    latitud: float
-    longitud: float
-    orientacion_grados: int
-    condiciones: dict[datetime, CondicionesMar] = field(default_factory=dict)
-
-    def __post_init__(self) -> None:
-        if self.nombre.strip() == "":
+    def __init__(
+        self,
+        *,
+        nombre: str,
+        municipio: str,
+        latitud: float,
+        longitud: float,
+        orientacion_grados: int,
+    ) -> None:
+        if nombre.strip() == "":
             raise NombrePlayaVacioError()
-        if self.municipio.strip() == "":
+        if municipio.strip() == "":
             raise MunicipioVacioError()
-        if not (-LATITUD_MAXIMA <= self.latitud <= LATITUD_MAXIMA):
-            raise LatitudFueraDeRangoError(self.latitud)
-        if not (-LONGITUD_MAXIMA <= self.longitud <= LONGITUD_MAXIMA):
-            raise LongitudFueraDeRangoError(self.longitud)
-        if not (0 <= self.orientacion_grados <= GRADOS_VUELTA_COMPLETA):
-            raise OrientacionFueraDeRangoError(self.orientacion_grados)
+        if not (-LATITUD_MAXIMA <= latitud <= LATITUD_MAXIMA):
+            raise LatitudFueraDeRangoError(latitud)
+        if not (-LONGITUD_MAXIMA <= longitud <= LONGITUD_MAXIMA):
+            raise LongitudFueraDeRangoError(longitud)
+        if not (0 <= orientacion_grados <= GRADOS_VUELTA_COMPLETA):
+            raise OrientacionFueraDeRangoError(orientacion_grados)
+        self._nombre = nombre
+        self._municipio = municipio
+        self._latitud = latitud
+        self._longitud = longitud
+        self._orientacion_grados = orientacion_grados
+        self._condiciones: dict[datetime, CondicionesMar] = {}
