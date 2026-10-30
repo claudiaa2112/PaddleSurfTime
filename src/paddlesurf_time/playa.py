@@ -4,16 +4,6 @@ from paddlesurf_time.condiciones_mar import CondicionesMar
 from paddlesurf_time.viento import GRADOS_VUELTA_COMPLETA
 
 
-class NombrePlayaVacioError(ValueError):
-    def __init__(self) -> None:
-        super().__init__("El nombre de la playa no puede estar vacío")
-
-
-class MunicipioVacioError(ValueError):
-    def __init__(self) -> None:
-        super().__init__("El municipio de la playa no puede estar vacío")
-
-
 class OrientacionFueraDeRangoError(ValueError):
     def __init__(self, orientacion_grados: int) -> None:
         super().__init__(
@@ -31,10 +21,6 @@ class Playa:
         municipio: str,
         orientacion_grados: int,
     ) -> None:
-        if nombre.strip() == "":
-            raise NombrePlayaVacioError()
-        if municipio.strip() == "":
-            raise MunicipioVacioError()
         if not (0 <= orientacion_grados <= GRADOS_VUELTA_COMPLETA):
             raise OrientacionFueraDeRangoError(orientacion_grados)
         self._nombre = nombre
