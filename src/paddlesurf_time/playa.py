@@ -1,16 +1,6 @@
 from datetime import datetime
 
 from paddlesurf_time.condiciones_mar import CondicionesMar
-from paddlesurf_time.viento import GRADOS_VUELTA_COMPLETA
-
-
-class OrientacionFueraDeRangoError(ValueError):
-    def __init__(self, orientacion_grados: int) -> None:
-        super().__init__(
-            "La orientación de la playa debe estar entre 0 y "
-            f"{GRADOS_VUELTA_COMPLETA} grados, no {orientacion_grados}"
-        )
-        self.orientacion_grados = orientacion_grados
 
 
 class Playa:
@@ -21,8 +11,6 @@ class Playa:
         municipio: str,
         orientacion_grados: int,
     ) -> None:
-        if not (0 <= orientacion_grados <= GRADOS_VUELTA_COMPLETA):
-            raise OrientacionFueraDeRangoError(orientacion_grados)
         self._nombre = nombre
         self._municipio = municipio
         self._orientacion_grados = orientacion_grados
