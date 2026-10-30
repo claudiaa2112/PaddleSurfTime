@@ -16,12 +16,6 @@ class AlturaOlasFueraDeRangoError(ValueError):
         self.altura_olas_metros = altura_olas_metros
 
 
-class MomentoNoEnPuntoError(ValueError):
-    def __init__(self, momento: datetime) -> None:
-        super().__init__(f"El momento debe ser una hora en punto, no {momento}")
-        self.momento = momento
-
-
 @dataclass(frozen=True)
 class CondicionesMar:
     momento: datetime
@@ -30,11 +24,5 @@ class CondicionesMar:
     bandera: Bandera | None
 
     def __post_init__(self) -> None:
-        if (
-            self.momento.minute != 0
-            or self.momento.second != 0
-            or self.momento.microsecond != 0
-        ):
-            raise MomentoNoEnPuntoError(self.momento)
         if not (0 <= self.altura_olas_metros <= ALTURA_OLAS_MAXIMA_METROS):
             raise AlturaOlasFueraDeRangoError(self.altura_olas_metros)
